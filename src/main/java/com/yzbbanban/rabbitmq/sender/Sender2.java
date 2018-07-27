@@ -1,24 +1,22 @@
-package com.yzbbanban.rabbitmq.common;
+package com.yzbbanban.rabbitmq.sender;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
-
 /**
  * Created by brander on 2018/7/11
  */
 @Component
-public class Sender {
+public class Sender2 {
 
     @Autowired
     private AmqpTemplate amqpTemplate;
 
 
-    public void send() {
-        String context = "hello" + new Date();
+    public void send(int i) {
+        String context = "hello: " + i ;
         System.out.println("Sender: " + context);
-        this.amqpTemplate.convertAndSend("hello", context);
+        this.amqpTemplate.convertAndSend("exchange","hello2", context);
     }
 }

@@ -1,4 +1,4 @@
-package com.yzbbanban.rabbitmq.common;
+package com.yzbbanban.rabbitmq.receiver;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
